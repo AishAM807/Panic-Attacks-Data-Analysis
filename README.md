@@ -4,7 +4,7 @@
 ### Data Source: Snowflake
 
 ## Report Snapshot (Power BI DESKTOP)
-
+<img width="875" height="490" alt="Image" src="https://github.com/user-attachments/assets/3dcb8998-3e25-4570-a388-543bcec11361" />
 
 ## Problem Statement:
 
