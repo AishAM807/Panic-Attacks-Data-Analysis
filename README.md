@@ -89,6 +89,11 @@ The dataset was prepared using Power Query Editor. The following preprocessing s
 - Step 13 : The report was then published to Power BI Service.
 
 ## Report Snapshot (Power BI DESKTOP)
+<img width="770" height="492" alt="Image" src="https://github.com/user-attachments/assets/12f962db-35bd-4194-8b4f-15894f80f8c4" />
+
+<img width="878" height="490" alt="Image" src="https://github.com/user-attachments/assets/9c6ef4a6-6a98-45ec-9f77-90cada603996" />
+
+<img width="878" height="483" alt="Image" src="https://github.com/user-attachments/assets/c2eade38-3435-437e-97f3-d60c1c6fafba" />
 
 
 # Insights
