@@ -47,17 +47,16 @@ The dataset was prepared using Power Query Editor. The following preprocessing s
 
 ### Step followed:
 
-
 - Step 1 : Also since by default, profile will be opened only for 1000 rows so you need to select "column profiling based on entire dataset".
-- Step 2 : Certain symptom-related fields such as Shortness of Breath and Sweating were originally stored as categorical text values (“Yes”, “No”). These variables 	   were converted into binary numerical indicators (1 = Yes, 0 = No) using the Conditional Column feature in Power Query Editor.
-- Step 3 : A new derived column “HML Panic Score” was created to categorize patients into High, Medium, and Low risk groups based on their Panic Score values.      	   Threshold ranges were defined to segment individuals according to severity levels.
+- Step 2 : Certain symptom-related fields such as Shortness of Breath and Sweating were originally stored as categorical text values (“Yes”, “No”). These variables were converted into   binary numerical indicators (1 = Yes, 0 = No) using the Conditional Column feature in Power Query Editor.
+- Step 3 : A new derived column “HML Panic Score” was created to categorize patients into High, Medium, and Low risk groups based on their Panic Score values. Threshold ranges were   defined to segment individuals according to severity levels.
 		
 		= Table.AddColumn(#"Changed Type2", "HML_PANIC_SCORE", each if [PANIC_SCORE] <= 4 then "LOW" else if [PANIC_SCORE] >= 8 then "HIGH" else "MEDIUM")
 
 - Step 4 : The first report page was designed using a dedicated “Panic Attack” theme. The canvas background and visual styling were customized to create a healthcare-	   oriented interface and improve visual readability
-- Step 5 : A second report page was developed to analyze the number of patients experiencing different panic attack symptoms. Bar chart visualizations were used to 	   compare the frequency of symptoms such as dizziness, chest pain, sweating, and shortness of breath.
-- Step 6 : A new calculated column “Age Group” was created using a DAX IF function to categorize patients into age brackets (for example: Youth, Adult, Senior) based   	   on the existing AGE column.
-- Step 7 : for creating new column following DAX expression was written;
+- Step 5 : A second report page was developed to analyze the number of patients experiencing different panic attack symptoms. Bar chart visualizations were used to  compare the frequency of symptoms such as dizziness, chest pain, sweating, and shortness of breath.
+- Step 6 : A new calculated column “Age Group” was created using a DAX IF function to categorize patients into age brackets (for example: Youth, Adult, Senior) based  on the existing AGE column.
+- Step 7 : for creating a new column following DAX expression was written;
 
 		age_group = IF('PANIC_ATTACK_DATA '[AGE] <= 17, "Child",
                      IF('PANIC_ATTACK_DATA '[AGE] <= 24, "Adolescent",
@@ -67,7 +66,7 @@ The dataset was prepared using Power Query Editor. The following preprocessing s
        
 - Step 8 : A third report page was created to examine lifestyle factors associated with panic attacks. Area chart visualizations were used to analyze:
 
-	- Number of patients by sleep duration (hours)
+  - Number of patients by sleep duration (hours)
 
   - Distribution of panic attack duration (in minutes)
 
@@ -75,9 +74,9 @@ The dataset was prepared using Power Query Editor. The following preprocessing s
 
 
 - Step 9 : Interactive slicers were implemented to allow dynamic exploration of the data. Users can filter the dashboard by HML Panic Score (risk level), Gender, 	   Trigger Reason, and Medical History.
-- Step 10 : The final report page presents key summary metrics including Average Sleep Hours, Average Panic Score, and Panic Attack Frequency. Bar chart visualizations 	    were used to compare these measures across different trigger reasons, such as Caffeine, PTSD, Social Anxiety, and Stress.
+- Step 10 : The final report page presents key summary metrics including Average Sleep Hours, Average Panic Score, and Panic Attack Frequency. Bar chart visualizations were used to compare these measures across different trigger reasons, such as Caffeine, PTSD, Social Anxiety, and Stress.
 - Step 11 : A DAX measure was created to calculate the percentage of patients experiencing dizziness out of the total patient population.
-	    The total number of patients was computed using the COUNTROWS function, and a filter condition was applied to isolate records where the Dizziness symptom                	    was present.
+	    The total number of patients was computed using the COUNTROWS function, and a filter condition was applied to isolate records where the Dizziness symptom was present.
 	    
   - Following DAX expression was written for the same,
 		
@@ -85,7 +84,7 @@ The dataset was prepared using Power Query Editor. The following preprocessing s
 		
 		
 - Step 12 : A card visual was used to represent Percentage of patients dizziness:
-
+<img width="196" height="94" alt="Image" src="https://github.com/user-attachments/assets/b5aafb0d-1ba5-44b3-bac0-bf2aa8365a0d" />
 
 - Step 13 : The report was then published to Power BI Service.
 
@@ -147,5 +146,5 @@ Following inferences can be drawn from the dashboard;
 
 - Senior: Sleep ≈ 6.6 hrs, Panic Score ≈ 5.98, Frequency ≈ 4.12
 
-	- Social anxiety produces consistent panic severity across all ages.
+- Social anxiety produces consistent panic severity across all ages.
 
